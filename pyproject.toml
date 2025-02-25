@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "evntly"
+version = "0.1.0"
+description = ""
+authors = ["Daria"]
+license = "MVT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.5"
+django = "^5.1.6"
+serializers = "^0.2.4"
+djangorestframework = "^3.15.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
