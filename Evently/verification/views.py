@@ -33,3 +33,6 @@ class RegisterView(generics.CreateAPIView):
 
 def registration_page(request):
     return render(request, "verification/register.html")
+	
+def home(request):
+    return HttpResponse("Welcome to Evently!")
