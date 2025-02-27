@@ -20,6 +20,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+<<<<<<< HEAD
     path("api/", include("verification.urls")),
     path("", include("frontend.urls"))
+=======
+    path("api/", include("verification.urls"))
+>>>>>>> 37422fc464ec74be2a5799c387641b059b094138
 ]
