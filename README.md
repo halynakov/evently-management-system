@@ -1,6 +1,7 @@
 1. install python
-2. python -m pip install Django
-3. pip install djangorestframework
-4. python manage.py runserver
+2. pip install poetry
+3. poetry install
+4. poetry shell
+5. python manage.py runserver
 
-python manage.py startapp myapp  
+python manage.py startapp myapp
