@@ -1,0 +1,9 @@
+.main {
+
+}
+
+.main_content {
+  display: grid;
+  row-gap: 150px;
+  padding-block: 150px;
+}

@@ -1,0 +1,11 @@
+.ivents {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.ivents__ivent {
+  min-width: 350px;
+  margin-right: 24px;
+}
