@@ -1,0 +1,51 @@
+.top-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 34px 120px;
+
+  transition: 0.3s;
+  color: #fff;
+}
+
+.top-bar__left {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__right {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__link {
+  display: flex;
+  margin-right: 50px;
+
+  text-decoration: none;
+}
+
+.top-bar__link:last-child {
+  margin: 0;
+}
+
+.top-bar__logo {
+  width: 157px;
+
+  transition: 0.3s;
+}
+
+.top-bar__logo:hover {
+  width: 157px;
+
+  transform: scale(1.2);
+}
+
+.top-bar__city {
+  margin: 0;
+  margin-right: 50px;
+}

@@ -1,0 +1,30 @@
+.header {
+  background-image: url(../../assets/images/back-header-2x.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.header__content {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #000;
+}
+
+.header__bottom {
+  padding-block: 50px;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.header__back-img {
+  height: 100hv;
+}

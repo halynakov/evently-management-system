@@ -1,0 +1,12 @@
+.catalogs {
+
+}
+
+.catalogs__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  color: var(--categories-title-color);
+}

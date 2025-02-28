@@ -1,0 +1,42 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  min-width: 350px;
+  width: 25%;
+  padding: 25px 30px 0 30px;
+  background-color: #f9f9f9;
+  font-weight: 700;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateX(-100%);
+  pointer-events: none;
+
+  
+}
+
+.menu:target {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.menu__top {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  margin-bottom: 100px;
+}
+
+.menu__link {
+}
+
+.menu__img {
+  width: 145px;
+}

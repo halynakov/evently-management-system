@@ -1,0 +1,44 @@
+.icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 50px;
+
+  background-size: cover;
+  background-position: center;
+
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.icon:last-child {
+  margin: 0;
+}
+
+
+.icon--menu {
+  background-image: url(../../assets/icons/menu-2x.png);
+}
+.icon--menu:hover {
+  background-image: url(../../assets/icons/menu-hover-2x.png);
+}
+
+
+.icon--loop {
+  background-image: url(../../assets/icons/loop-2x.png);
+
+}
+
+
+.icon--log-in {
+  background-image: url(../../assets/icons/log-in-2x.png);
+}
+.icon--log-in:hover {
+  background-image: url(../../assets/icons/log-in-hover-2x.png);
+}
+
+.icon--cross {
+  background-image: url(../../assets/icons/icon-close-2x.png);
+}
