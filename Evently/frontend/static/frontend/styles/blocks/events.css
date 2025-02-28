@@ -1,11 +1,11 @@
-.ivents {
+.events {
   display: flex;
   flex-direction: row;
   width: 100%;
   overflow-x: scroll;
 }
 
-.ivents__ivent {
+.events__event {
   min-width: 350px;
   margin-right: 24px;
 }
