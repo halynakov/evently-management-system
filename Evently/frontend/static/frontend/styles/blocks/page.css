@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  --back-color: #E8EBBB;
+  --text-color: #B17E4B;
+
+  --header-back-color: #B2AB2E;
+  --header-text-color: #E8EBBB;
+
+  --categories-title-color: #B17E4B;
+  --card-back-color: #DBE7C6;
+  --card-text-color: #2C2C2C;
+
+  --height-card: 210px;
+
+  /* width: 100%;
+  height: 100%; */
+  margin: 0;
+  background-color: var(--back-color);
+}
+
+.conteiner {
+  padding-inline: 120px;
+}
+
+.form--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #F8F9E4;
+}
