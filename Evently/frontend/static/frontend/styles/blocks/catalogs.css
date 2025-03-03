@@ -1,5 +1,6 @@
 .catalogs {
-  width: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .catalogs__title {
