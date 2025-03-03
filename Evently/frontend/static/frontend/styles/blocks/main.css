@@ -1,9 +1,12 @@
 .main {
-
+  width: 100%;
 }
 
 .main_content {
+  width: 100%;
+
   display: grid;
   row-gap: 150px;
   padding-block: 150px;
+  /* margin-top: 150px; */
 }

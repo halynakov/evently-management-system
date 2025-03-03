@@ -17,7 +17,7 @@ body {
   --back-color: #E8EBBB;
   --text-color: #B17E4B;
 
-  --header-back-color: #B2AB2E;
+  --header-back-color: rgba(178, 171, 46, 1);
   --header-text-color: #E8EBBB;
 
   --categories-title-color: #B17E4B;
