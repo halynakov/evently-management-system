@@ -1,11 +1,13 @@
 .events {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 24px;
   width: 100%;
   overflow-x: scroll;
 }
 
 .events__event {
   min-width: 350px;
-  margin-right: 24px;
+  max-width: 350px;
 }
