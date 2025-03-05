@@ -42,6 +42,9 @@ media
 # IntelliJ
 out/
 
+#Visual Studio
+.vs/
+
 # JIRA plugin
 atlassian-ide-plugin.xml
 
