@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href=" {% static 'frontend/styles/blocks/page.css' %} ">
+    <link rel="stylesheet" href=" {% static 'frontend/styles/forms/form.css' %} ">
+    <link rel="stylesheet" href=" {% static 'frontend/styles/forms/formBox.css' %} ">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    {% block styles %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    {% block formbox %}{% endblock %}
+  </body>
+</html>

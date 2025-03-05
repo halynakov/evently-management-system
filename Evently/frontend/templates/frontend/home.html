@@ -1,7 +1,9 @@
 {% extends "frontend/base.html" %}
 
+{% load static %}
+
 {% block styles %}
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href=" {% static 'frontend/styles/partials/home.css' %} ">
 {% endblock %}
 
 {% block title %} Home {% endblock %}
@@ -104,5 +106,4 @@
 
     </div>
   </div>
-
 {% endblock %}

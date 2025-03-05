@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  sdb
-</body>
-</html>
+{% extends "frontend/base.html" %}
+
+{% block styles %}
+{% endblock %}
+
+{% block title %}  Evently  {% endblock %}
+
+{% block content %}
+
+  {% include "./partials/header.html" %}
+
+  {% include "./partials/top-bar.html" %}
+
+  {% include "./partials/menu.html" %}
+
+  {% include "./partials/main.html" %}
+
+  {% include "./partials/footer.html" %}
+
+  <script src="../../static/frontend/scripts/top-bar.js"></script>
+
+{% endblock %}

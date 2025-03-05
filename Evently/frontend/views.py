@@ -9,3 +9,15 @@ def events(request):
 
 def home(request):
   return render(request, "frontend/home.html")
+
+def signup(request):
+  return render(request, "frontend/forms/sign-up.html")
+
+def login(request):
+  return render(request, "frontend/forms/log-in.html")
+
+def adminAddPost(request):
+  return render(request, "frontend/forms/adminAddPost.html")
+
+def adminChengePost(request):
+  return render(request, "frontend/forms/adminChangePost.html")
