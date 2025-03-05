@@ -10,7 +10,7 @@ def events(request):
 def home(request):
   return render(request, "frontend/home.html")
 
-def logup(request):
+def signup(request):
   return render(request, "frontend/forms/sign-up.html")
 
 def login(request):
