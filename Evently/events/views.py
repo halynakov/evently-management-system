@@ -41,3 +41,21 @@ class EventViewSet(viewsets.ViewSet):
             event = serializer.save()
             return Response(EventSerializer(event).data, status=201)
         return Response(serializer.errors, status=400)
+    
+    @action(detail=False, methods=['post'], url_path='approve')
+    def approve_event(self, request):
+        """ POST /api/events/approve/ - Approve an event for a user (set is_approved=True)
+        """
+        user_id = request.GET.get("user_id")
+        event_id = request.GET.get("event_id")
+
+        if not user_id or not event_id:
+            return Response({"error": "user_id and event_id are required"})
+
+        try:
+            event_user = EventUser.objects.get(user_id=user_id, event_id=event_id)
+            event_user.is_approved = True
+            event_user.save()
+            return Response({"message": "Event approved successfully"}, status=200)
+        except EventUser.DoesNotExist:
+            return Response({"error": "User is not registered for this event"}, status=404)
