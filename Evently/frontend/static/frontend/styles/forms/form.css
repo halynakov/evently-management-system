@@ -1,24 +1,3 @@
-.box {
-  position: relative;
-
-  width: 350px;
-  height: auto;
-  padding: 10px;
-
-  color: #B2AB2E;
-  box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-}
-
-.box__cross-link {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.box__cross-img {
-  width: 32px;
-}
-
 .form__title {
   font-size: 27px;
   font-weight: 500;
@@ -78,21 +57,4 @@
   margin-top: 100px;
   color: #000;
   background-color: #d3bba3;
-}
-
-.box__bottom-lable {
-  font-size: 10px;
-  position: absolute;
-  bottom: -20px;
-  text-transform: uppercase;
-}
-
-.box__bottom-link {
-  color: #B2AB2E;
-  text-decoration: none;
-}
-
-.box__bottom-link:hover {
-  color: #000;
-  text-decoration: underline;
 }

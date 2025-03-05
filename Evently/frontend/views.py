@@ -15,3 +15,9 @@ def logup(request):
 
 def login(request):
   return render(request, "frontend/forms/login.html")
+
+def adminAddPost(request):
+  return render(request, "frontend/forms/adminAddPost.html")
+
+def adminChengePost(request):
+  return render(request, "frontend/forms/adminChangePost.html")
