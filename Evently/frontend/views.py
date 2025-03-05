@@ -12,3 +12,6 @@ def home(request):
 
 def logup(request):
   return render(request, "frontend/forms/logup.html")
+
+def login(request):
+  return render(request, "frontend/forms/login.html")
