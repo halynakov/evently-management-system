@@ -2,22 +2,17 @@
 
 {% load static %}
 
-{% block title %}Реєстрація{% endblock %}
+{% block title %}Увійти{% endblock %}
 
 {% block formbox %}
   <div class="form--container">
     <div class="box">
       <a class="box__cross-link" href="/"><img class="box__cross-img" src=" {% static 'frontend/assets/icons/icon-close-2x.png' %} " alt="cross"></a>
 
-      <h1 class="box__title">Реєстрація</h1>
+      <h1 class="box__title">Увійти</h1>
 
       <form class="form" action="submit" method="post">
         <div class="form_filds">
-          <div class="form__fild">
-            <label class="form__lable" for="name">Введіть повне ім'я</label>
-            <input
-              class="form__input" type="text" id="name" name="name" placeholder="Наприклад: Ім’я Прізвище" required/>
-          </div>
           <div class="form__fild">
             <label class="form__lable" for="email">Email</label>
             <input class="form__input" type="email" id="email" name="email" placeholder="Наприклад: example@some.com" required
@@ -34,7 +29,7 @@
       </form>
 
       <p class="box__bottom-lable">
-        В мене вже є акаунт: <a class="box__bottom-link" href="/login">Увійти</a>
+        В мене не має акаунту: <a class="box__bottom-link" href="/sign-up/register">зареєструватися</a>
       </p>
     </div>
   </div>

@@ -5,8 +5,8 @@ urlpatterns = [
   path("", views.index),
   path("events/", views.events, name="events"),
   path("home/", views.home, name="home"),
-  path("logup/", views.logup, name="logup"),
-  path("login/", views.login, name="login"),
+  path("sign-up/register", views.logup, name="sign-up"),
+  path("log-in/", views.login, name="log-in"),
   path("adminTest/addPost", views.adminAddPost, name="adminAddPost"),
   path("adminTest/changePost", views.adminChengePost, name="adminChengePost"),
 ]
