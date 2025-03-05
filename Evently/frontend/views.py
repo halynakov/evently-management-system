@@ -9,3 +9,6 @@ def events(request):
 
 def home(request):
   return render(request, "frontend/home.html")
+
+def logup(request):
+  return render(request, "frontend/forms/logup.html")
