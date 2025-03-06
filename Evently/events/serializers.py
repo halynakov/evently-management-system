@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from events.models import Event
+from events.models import Event, EventCategory
 
 class EventSerializer(serializers.ModelSerializer):
     """Сериализатор для получения событий"""
@@ -13,6 +14,10 @@ class EventSerializer(serializers.ModelSerializer):
 class EventCreateSerializer(serializers.ModelSerializer):
     """Сериализатор для создания события"""
 
+    category = serializers.PrimaryKeyRelatedField(queryset=EventCategory.objects.all())
+
     class Meta:
         model = Event
         fields = ['name', 'date', 'location', 'description', 'category']
+
+

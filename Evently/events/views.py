@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -94,6 +95,24 @@ class EventViewSet(viewsets.ViewSet):
             "registered_at": event_user.registered_at,
             "is_approved": event_user.is_approved
         }, status=201)
+
+
+
+
+    def update(self, request, pk=None):
+        """PUT /api/events/<id>/ - Update an existing event"""
+        event = get_object_or_404(Event, pk=pk)
+        serializer = EventCreateSerializer(event, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk=None):
+        """DELETE /api/events/<id>/ - Delete an event"""
+        event = get_object_or_404(Event, pk=pk)
+        event.delete()
+        return Response({"message": "Event deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
 
         
     
