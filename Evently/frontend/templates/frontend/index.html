@@ -13,7 +13,41 @@
 
   {% include "./partials/menu.html" %}
 
-  {% include "./partials/main.html" %}
+  <!-- {% include "./partials/main.html" %} -->
+
+  <main class="main">
+    <div class="conteiner">
+      <div class="main_content">
+        {% for category in eventCategoris %}
+          <section class="catalogs" id="top-events">
+            <h2 class="catalogs__title">{{ category }}</h2>
+            <div class="events">
+
+              {% for event in events %}
+                {% if category.name == event.category.name %}
+                  <article class="events__event">
+                    <div class="card">
+                      <a href="/sign-up/" class="card__img"></a>
+                      <div class="card__all-text">
+                        <p class="card__date">{{ event.date }}</p>
+            
+                        <div class="car__space">
+                          <h3 class="card__title"><a href="/sign-up/">{{ event.name }}</a></h3>
+            
+                          <p class="card__adress">{{ event.location }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                {% endif %}
+              {% endfor %}
+              
+            </div>
+          </section>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
 
   {% include "./partials/footer.html" %}
 
