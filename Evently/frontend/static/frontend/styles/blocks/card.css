@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,13 @@
   background-position: center;
 }
 
+.card__done {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: scale(1.5);
+}
+
 .card__all-text {
   display: flex;
   flex-direction: column;
@@ -28,16 +36,62 @@
   font-weight: 300;
 }
 
-
 .card__title {
   margin: 0;
-  height: 150px;
+  height: min-content;
+  /* height: 150px; */
   margin-top: 2px;
   font-size: 24px;
   line-height: 24px;
   font-weight: 600;
   text-align: left;
   overflow: hidden;
+}
+
+.card__link {
+  text-decoration: none;
+  color: var(--card-text-color);
+  transition: 0.2s;
+}
+
+.card__link:hover {
+  color: #fff;
+}
+
+.card__link:active {
+  color: #0eca17;
+}
+
+.card__description {
+  text-align:justify;
+  height: 150px;
+  overflow-y: hidden;
+  margin: 5px 0;
+}
+
+.card__btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0;
+}
+
+.card__btn {
+  padding: 5px 10px;
+  background-color: #0eca17;
+  color: #F8F9E4;
+  background-color: var(--card-text-color);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn--change:hover {
+  color: var(--card-text-color);
+  background-color: yellow;
+}
+
+.btn--delete:hover {
+  color: var(--card-text-color);
+  background-color: red;
 }
 
 .card__adress {

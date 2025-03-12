@@ -1,0 +1,18 @@
+.admin__addPost {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  /* width: 50px; */
+}
+
+.admin__link {
+  text-decoration: none;
+  color: #F8F9E4;
+  background-color: var(--card-text-color);
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.admin__link:hover {
+  background-color: green;
+}

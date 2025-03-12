@@ -43,6 +43,26 @@
   color: #d3bba3;
 }
 
+.form__right-bottom-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__not-checkbox {
+  display: grid;
+  row-gap: 50px;
+  width: 45%;
+}
+
+.form__checkbox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  
+  width: 45%;
+}
+
 .form__btn {
   margin-top: 100px;
   border: none;

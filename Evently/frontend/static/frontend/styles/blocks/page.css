@@ -23,6 +23,7 @@ body {
   --categories-title-color: #B17E4B;
   --card-back-color: #DBE7C6;
   --card-text-color: #2C2C2C;
+  --scroll-bar-color: #2C2C2C;
 
   --height-card: 210px;
 
@@ -40,4 +41,19 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #F8F9E4;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(178, 171, 46, 0);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color);
+  border-radius: 5px;
 }

@@ -8,7 +8,12 @@
     </a>
   </div>
   <div class="top-bar__right">
-    <p class="top-bar__city">Харків</p>
+    <label for="citis" class="top-bar__city"></label>
+    <select class="top-bar__select" id="citis" name="citis">
+      {% for location in uniqueLocations %}
+        <option class="top-bar__option" value="citis">{{ location }}</option>
+      {% endfor %}
+    </select>
 
     <a href="#" class="icon icon--loop"></a>
 

@@ -21,86 +21,23 @@
 
         <div class="events">
 
-          <article class="events__event">
-            <div class="card">
-              <a href="#" class="card__img"></a>
+          {% for eventUser in eventsUser %}
+            <article class="events__event">
+              <div class="card">
+                <input class="card__done" type="checkbox">
+                <a href="#" class="card__img"></a>
 
-              <div class="card__all-text">
-                <p class="card__date">23 листопада 18:00, чт.</p>
-                
-                <div class="car__space">
-                  <h3 class="card__title"><a href="#">Листопад у традиційній культурі українців</a></h3>
-                  
-                  <p class="card__adress">Харків, вул. Пушкінська, 47</p>
+                <div class="card__all-text">
+                  <p class="card__date">{{ eventUser.date }}</p>
+                  <div class="car__space">
+                    <h3 class="card__title"><a class="card__link" href="event-{{ forloop.counter }}">{{ eventUser.description }}</a></h3>
+                    
+                    <p class="card__adress">{{ eventUser.location }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-
-          <article class="events__event">
-            <div class="card">
-              <a href="#" class="card__img"></a>
-
-              <div class="card__all-text">
-                <p class="card__date">23 листопада 18:00, чт.</p>
-                
-                <div class="car__space">
-                  <h3 class="card__title"><a href="#">Листопад у традиційній культурі українців</a></h3>
-                  
-                  <p class="card__adress">Харків, вул. Пушкінська, 47</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="events__event">
-            <div class="card">
-              <a href="#" class="card__img"></a>
-
-              <div class="card__all-text">
-                <p class="card__date">23 листопада 18:00, чт.</p>
-                
-                <div class="car__space">
-                  <h3 class="card__title"><a href="#">Листопад у традиційній культурі українців</a></h3>
-                  
-                  <p class="card__adress">Харків, вул. Пушкінська, 47</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          
-          <article class="events__event">
-            <div class="card">
-              <a href="#" class="card__img"></a>
-
-              <div class="card__all-text">
-                <p class="card__date">23 листопада 18:00, чт.</p>
-                
-                <div class="car__space">
-                  <h3 class="card__title"><a href="#">Листопад у традиційній культурі українців</a></h3>
-                  
-                  <p class="card__adress">Харків, вул. Пушкінська, 47</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="events__event">
-            <div class="card">
-              <a href="#" class="card__img"></a>
-
-              <div class="card__all-text">
-                <p class="card__date">23 листопада 18:00, чт.</p>
-                
-                <div class="car__space">
-                  <h3 class="card__title"><a href="#">Листопад у традиційній культурі українців</a></h3>
-                  
-                  <p class="card__adress">Харків, вул. Пушкінська, 47</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
+            </article>
+          {% endfor %}
         </div>
       </section>
 

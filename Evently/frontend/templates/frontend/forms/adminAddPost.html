@@ -11,7 +11,7 @@
 {% block formbox %}
   <div class="form--container">
     <div class="box">
-      <a class="box__cross-link" href="/"><img class="box__cross-img" src=" {% static 'frontend/assets/icons/icon-close-2x.png' %} " alt="cross"></a>
+      <a class="box__cross-link" href="/adminTest/"><img class="box__cross-img" src=" {% static 'frontend/assets/icons/icon-close-2x.png' %} " alt="cross"></a>
 
       <h1 class="box__title">Додати подію</h1>
 
@@ -44,13 +44,21 @@
                 <label class="form__lable" for="date_amd_time">Опис</label>
                 <textarea class="form__textarea" name="writing" id="writing" placeholder="Текс теми"></textarea>
               </div>
-              <div class="form__fild">
-                <label class="form__lable" for="date_amd_time">Категорія</label>
-                <input class="form__input" type="text" id="date_amd_time" name="date_amd_time" placeholder="Наприклад:   Наука" required />
-              </div>
-              <div class="form__fild form__checkbox">
-                <input class="form__input" type="checkbox" id="top_action" name="top_action" />
-                <label class="form__lable" for="top_action">Топ подія</label>
+              <div class="form__right-bottom-box">
+                <div class="form__not-checkbox">
+                  <div class="form__fild">
+                    <label class="form__lable" for="image">Картинка</label>
+                    <input class="form__input" type="text" id="image" name="image" placeholder="Наприклад:   img" required />
+                  </div>
+                  <div class="form__fild">
+                    <label class="form__lable" for="date_amd_time">Категорія</label>
+                    <input class="form__input" type="text" id="date_amd_time" name="date_amd_time" placeholder="Наприклад:   Наука" required />
+                  </div>
+                </div>
+                <div class="form__fild form__checkbox">
+                  <input class="form__input" type="checkbox" id="top_action" name="top_action" />
+                  <label class="form__lable" for="top_action">Топ подія</label>
+                </div>
               </div>
             </div>
           </div>

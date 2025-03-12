@@ -32,8 +32,8 @@
                         <p class="card__date">{{ event.date }}</p>
             
                         <div class="car__space">
-                          <h3 class="card__title"><a href="#">{{ event.name }}</a></h3>
-            
+                          <h3 class="card__title"><a  class="card__link" href="event-{{ forloop.counter }}">{{ event.name }}</a></h3>
+                          <p class="card__description">{{ event.description }}</p>
                           <p class="card__adress">{{ event.location }}</p>
                         </div>
                       </div>
