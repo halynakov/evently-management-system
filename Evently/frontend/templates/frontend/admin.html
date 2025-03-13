@@ -8,13 +8,7 @@
 
 {% block content %}
 
-  {% include "./partials/header.html" %}
-
-  {% include "./partials/top-bar.html" %}
-
   {% include "./partials/menu.html" %}
-
-  <!-- {% include "./partials/main.html" %} -->
 
   <main class="main">
     <div class="conteiner">
@@ -33,11 +27,11 @@
                         <p class="card__date">{{ event.date }}</p>
             
                         <div class="car__space">
-                          <h3 class="card__title"><a class="card__link" href="#">{{ event.name }}</a></h3>
+                          <h3 class="card__title"><a class="card__link" href="event-{{ forloop.counter }}">{{ event.name }}</a></h3>
                           <p class="card__description">{{ event.description }}</p>
-                          <div class="card__btns">
-                            <a class="card__btn btn--change" href="/adminTest/changePost">Редагувати</a>
-                            <a class="card__btn btn--delete" href="#">Видалити</a>
+                          <div class="admin__btns">
+                            <a class="admin__btn btn--change" href="/adminTest/changePost">Редагувати</a>
+                            <a class="admin__btn btn--delete" href="#">Видалити</a>
                           </div>
                           <p class="card__adress">{{ event.location }}</p>
                         </div>
@@ -55,11 +49,11 @@
   </main>
 
   <aside class="admin__addPost">
-    <a class="admin__link" href="/adminTest/addPost">Додати пост</a>
+    <a class="admin__btn" href="/adminTest/addPost">Додати пост</a>
   </aside>
 
   {% include "./partials/footer.html" %}
 
-  <script src="../../static/frontend/scripts/top-bar.js"></script>
+  <!-- <script src="../../static/frontend/scripts/top-bar.js"></script> -->
 
 {% endblock %}

@@ -2,17 +2,29 @@
   position: fixed;
   right: 40px;
   bottom: 40px;
-  /* width: 50px; */
+}
+.admin__btns {
+  display: flex;
+  margin-bottom: 10px;
 }
 
-.admin__link {
+.admin__btn {
   text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  border: 1px solid var(--card-text-color);
   color: #F8F9E4;
+  padding: 15px 10px;
   background-color: var(--card-text-color);
-  padding: 10px 20px;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
-.admin__link:hover {
-  background-color: green;
+.admin__btn:hover {
+  border: 1px solid var(--card-text-color);
+  color: var(--card-text-color);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.top-bar__serch {
+  display: none;
 }

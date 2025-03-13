@@ -13,11 +13,12 @@
 }
 
 .nav_el {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   width: fit-content;
 }
 
 .nav_link {
+  font-size: 20px;
   display: block;
   text-decoration: none;
   color: #000;

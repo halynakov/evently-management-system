@@ -8,15 +8,31 @@
     </a>
   </div>
   <div class="top-bar__right">
-    <label for="citis" class="top-bar__city"></label>
-    <select class="top-bar__select" id="citis" name="citis">
+    
+    <div class="top-bar__selector">
+      <div class="top-bar__lable">Вибрат місто</div>
+      <div class="top-bar__list">
+        {% for location in uniqueLocations %}
+          <div class="top-bar__citis">{{ location }}</div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- <select class="top-bar__select" id="citis" name="citis">
       {% for location in uniqueLocations %}
         <option class="top-bar__option" value="citis">{{ location }}</option>
       {% endfor %}
-    </select>
+    </select> -->
 
-    <a href="#" class="icon icon--loop"></a>
+    <div class="top-bar__serch">
+      <a href="#" class="icon icon--loop top-bar__loop"></a>
+      <div class="top-bar__fild">
+        <input type="text" class="top-bar__input">
+        <a href="#" class="top-bar__btn-serch">Шукати</a>
+      </div>
+    </div>
 
     <a href="/sign-up" class="icon icon--log-in"></a>
+
   </div>
 </div>

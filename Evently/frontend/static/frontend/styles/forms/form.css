@@ -1,5 +1,5 @@
 .form__title {
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 500;
 }
 
@@ -23,11 +23,11 @@
 }
 
 .form__lable {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .form__input {
-  font-size: 10px;
+  font-size: 14px;
   border: none;
   background-color: #F8F9E4;
   border-bottom: 1px solid #B2AB2E;
@@ -36,6 +36,7 @@
 .form__input:focus {
   outline: none;
   border: none;
+  color:  #D3BBA3;
   border-bottom: 1px solid #B2AB2E;
 }
 
@@ -64,6 +65,7 @@
 }
 
 .form__btn {
+  width: 100%;
   margin-top: 100px;
   border: none;
   text-transform: uppercase;
