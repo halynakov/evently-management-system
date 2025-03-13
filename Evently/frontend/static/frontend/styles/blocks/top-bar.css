@@ -44,6 +44,7 @@
 }
 
 .top-bar__list {
+  font-size: 20px;
   height: 200px;
   padding: 10px;
   color: #B17E4B;

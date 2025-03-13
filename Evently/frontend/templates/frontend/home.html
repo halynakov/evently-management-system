@@ -16,15 +16,35 @@
   <div class="conteiner">
     <div class="main_content">
 
+      <div class="home">
+        <div class="home__title">
+          <img class="home__img" src="../../static/frontend/assets/icons/home-user-2x.png" alt="home-user-2x">
+          <p>Персональні данні</p>
+        </div>
+        <div class="home__user-datas">
+          <div class="home__user-data">
+            <p class="home__name-fild">Ім'я:</p>
+            <p class="home__content-fild">first_name</p>
+          </div>
+          <div class="home__user-data">
+            <p class="home__name-fild">Email:</p>
+            <p class="home__content-fild">exemple@exemple.exemple</p>
+          </div>
+          <div class="home__user-data">
+            <p class="home__name-fild">Призвище:</p>
+            <p class="home__content-fild">last_name</p>
+          </div>
+        </div>
+      </div>
+
       <section class="catalogs" id="top-events">
-        <h2 class="catalogs__title">Мої події</h2>
+        <h2 class="catalogs__title">Мої події:</h2>
 
         <div class="events">
 
           {% for eventUser in eventsUser %}
             <article class="events__event">
               <div class="card">
-                <input class="card__done" type="checkbox">
                 <a href="#" class="card__img"></a>
 
                 <div class="card__all-text">

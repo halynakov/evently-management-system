@@ -28,7 +28,7 @@ body {
   --height-card: 210px;
 
   margin: 0;
-  background-color: var(--back-color);
+  background-color: #F8F9E4;
 }
 
 .conteiner {

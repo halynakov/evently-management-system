@@ -1,7 +1,7 @@
 .admin__addPost {
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  right: 120px;
+  top: 60px;
 }
 .admin__btns {
   display: flex;

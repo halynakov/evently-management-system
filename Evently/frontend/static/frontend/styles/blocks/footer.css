@@ -1,0 +1,27 @@
+.footer {
+  /* height: 180px; */
+  background-color: #E8EBBB;
+  padding: 60px 120px;
+}
+
+.footer__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-size: 27px;
+  color: #B2AB2E;
+}
+
+.footer_line {
+  width: 100%;
+  margin: 20px 0;
+  border-bottom: 1px solid #B17E4B;
+}
+
+.footer__text {
+  font-size: 20px;
+  color: #B17E4B;
+}
