@@ -10,7 +10,8 @@ urlpatterns = [
   #path("sign-up/", views.signup, name="sign-up"),
   path("register/", RegisterView.as_view(), name="register"),
   path("sign-up/", registration_page, name="sign-up"),
-  path("log-in/", views.login, name="log-in"),
+  #path("log-in/", views.login, name="log-in"),
+  path("log-in/", login_view, name="log-in"),
   path("adminTest/addPost", views.adminAddPost, name="adminAddPost"),
   path("adminTest/changePost", views.adminChengePost, name="adminChengePost"),
 ]
