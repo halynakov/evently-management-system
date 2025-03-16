@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from events.models import Event, EventCategory, EventUser
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -74,3 +75,8 @@ def adminAddPost(request):
 
 def adminChengePost(request):
   return render(request, "frontend/forms/adminChangePost.html")
+
+@login_required(login_url="/log-in/")  # Если не залогинен, отправит на логин
+def home_view(request):
+    print(f"Пользователь: {request.user}, Залогинен: {request.user.is_authenticated}")
+    return render(request, "frontend/home.html")  # Страница личного кабинета

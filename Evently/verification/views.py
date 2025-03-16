@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login  # Добавьте logout здесь
+from django.contrib.auth import authenticate, login, logout  # Добавьте logout здесь
 from django.core.mail import send_mail
 from rest_framework.response import Response
 from rest_framework import status, generics
@@ -10,7 +10,8 @@ from .models import CustomUser
 from .serializers import RegistrationSerializer
 from django.conf import settings
 from .forms import LoginForm
-from django.http import HttpResponse  # Не забудьте импортировать HttpResponse
+from django.http import HttpResponse 
+
 
 
 class RegisterView(generics.CreateAPIView):
@@ -36,7 +37,7 @@ class RegisterView(generics.CreateAPIView):
 
 
 def registration_page(request):
-    return render(request, "verification/register.html")
+    return render(request, "/sign-up/")
 
 def verify_user(request, token):
     """Обрабатывает верификацию пользователя по токену"""
@@ -53,6 +54,8 @@ def verify_user(request, token):
 
 def login_view(request):
     if request.method == "POST":
+        print("Получен POST-запрос на логин")  # Проверяем, доходит ли запрос
+        print("Данные запроса:", request.POST)  # Логируем входные данные
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
@@ -61,6 +64,7 @@ def login_view(request):
             print(f"Попытка входа пользователя: {email}")  
             if user is not None:
                 login(request, user)
+                request.session.set_expiry(0)
                 print("Авторизация успешна!")  
                 return redirect('home')
   
@@ -69,9 +73,10 @@ def login_view(request):
                 form.add_error(None, "Неверный email или пароль.")
     else:
         form = LoginForm()
-    return render(request, "verification/login.html", {'form': form})
+    return render(request, "frontend/forms/log-in.html", {'form': form})
 
-# def logout_view(request):
-#     """Обрабатывает выход пользователя"""
-#     logout(request)
-#     return redirect("login")
+
+def logout_view(request):
+    """Обрабатывает выход пользователя"""
+    logout(request)
+    return redirect("login")

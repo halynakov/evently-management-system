@@ -145,3 +145,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "dereruditor@gmail.com"
 EMAIL_HOST_PASSWORD = "ntqg tflu jqct jydt"
+
+
+SESSION_COOKIE_AGE = 60 * 60 * 24  # 1 день (можешь поставить больше)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Сессия НЕ удаляется при закрытии браузера
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
