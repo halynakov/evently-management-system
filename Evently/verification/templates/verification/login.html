@@ -2,15 +2,15 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация</title>
+    <title>Авторизація</title>
 </head>
 <body>
-    <h2>Вход</h2>
+    <h2>Вхід</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.email  }}
         {{ form.password }}
-        <button type="submit">Войти</button>
+        <button type="submit">Увійти</button>
     </form>
 </body>
 </html>
