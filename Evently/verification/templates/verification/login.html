@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизація</title>
+    <link href="./../../../static/frontend/styles/forms/sign-up.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <h2>Вход</h2>
     <form method="post">
+      <h2>Вхід</h2>
         {% csrf_token %}
-        {{ form.email  }}
+        {{ form.email }}
         {{ form.password }}
-        <button type="submit">Войти</button>
+        <button type="submit">Увійти</button>
     </form>
 </body>
 </html>

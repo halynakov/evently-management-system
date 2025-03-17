@@ -1,33 +1,36 @@
-<!DOCTYPE html>
-<html lang="ru">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Регистрация</title>
+    <title>Реєстрація</title>
+    <link href="./../../../static/frontend/styles/forms/sign-up.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
   </head>
   <body>
-    <h2>Регистрация</h2>
     <form id="registerForm">
-      <label for="first_name">Имя:</label>
-      <input type="text" id="first_name" name="first_name" required />
-      <br />
+      <h2>Реєстрація</h2>
+      <label for="first_name">Ім'я:</label>
+      <input type="text" id="first_name" name="first_name" placeholder="Максим" required />
+      <br/>
 
-      <label for="last_name">Фамилия:</label>
-      <input type="text" id="last_name" name="last_name" required />
-      <br />
+      <label for="last_name">Прізвище:</label>
+      <input type="text" id="last_name" name="last_name" placeholder="Марцинкевич" required />
+      <br/>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <br />
+      <input type="email" id="email" name="email" placeholder="example@some.com" required />
+      <br/>
 
       <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" required />
-      <br />
+      <input type="password" id="password" name="password" placeholder="1488/1337WLM" required />
+      <br/>
 
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-
+      <button type="submit">Зареєструватися</button>
+      <p>В мене вже є акаунт: <a href="/log-in">Увійти</a></p>
+      
     <p id="responseMessage"></p>
+
+    </form>
 
     <script>
       document

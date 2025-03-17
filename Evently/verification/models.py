@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
-            raise ValueError("У пользователя должен быть email")
+            raise ValueError("Користувач повинен мати email")
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
@@ -19,7 +19,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
     def get_by_natural_key(self, email):
-        """Добавляем поддержку аутентификации по email"""
+        """Додаемо по email"""
         return self.get(email=email)
 
 
@@ -39,7 +39,7 @@ class CustomUser(AbstractBaseUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name"]
 
-    objects = CustomUserManager()  # <--- Добавляем кастомный менеджер
+    objects = CustomUserManager()  # <--- додаємо кастомного менеджера
 
     def __str__(self):
         return self.email

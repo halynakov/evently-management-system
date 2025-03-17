@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login  # Добавьте logout здесь
+from django.contrib.auth import authenticate, login, logout  # Добавьте logout здесь
 from django.core.mail import send_mail
 from rest_framework.response import Response
 from rest_framework import status, generics
@@ -58,20 +58,26 @@ def login_view(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             user = authenticate(email=email, password=password)
-            print(f"Попытка входа пользователя: {email}")  
+            print(f"Спроба входу: {email}")  
             if user is not None:
                 login(request, user)
-                print("Авторизация успешна!")  
-                return redirect('home')
+                print("Авторизація успішна!")  
+                return redirect('/', {"user_id": user.id})
   
             else:
-                print("Ошибка: неверный email или пароль.")  
-                form.add_error(None, "Неверный email или пароль.")
+                print("Помилка: невірний email чи пароль.")  
+                form.add_error(None, "Невірний email чи пароль.")
     else:
         form = LoginForm()
     return render(request, "verification/login.html", {'form': form})
 
+def logout_view(request):
+    """Обробка входу користувача"""
+    print("log189")
+    logout(request)
+    return redirect("login")
+
 # def logout_view(request):
-#     """Обрабатывает выход пользователя"""
-#     logout(request)
-#     return redirect("login")
+#     logout(request)  # Clears the session and logs the user out
+#     request.session.flush()  # Ensure all session data is completely cleared
+#     return redirect('/')  
