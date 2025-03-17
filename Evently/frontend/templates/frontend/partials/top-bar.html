@@ -3,33 +3,14 @@
     <a href="#menu" class="icon icon--menu">
     </a>
 
-    <a href="#" class="top-bar__link">
+    <a href="/" class="top-bar__link">
       <img class="top-bar__img top-bar__logo" src="../../../static/frontend/assets/images/logo-2x.png" alt="logo"/>
     </a>
   </div>
   <div class="top-bar__right">
     
     <div class="top-bar__selector">
-      <div class="top-bar__lable">Вибрати місто</div>
-      <div class="top-bar__list">
-        {% for location in uniqueLocations %}
-          <div class="top-bar__citis">{{ location }}</div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- <select class="top-bar__select" id="citis" name="citis">
-      {% for location in uniqueLocations %}
-        <option class="top-bar__option" value="citis">{{ location }}</option>
-      {% endfor %}
-    </select> -->
-
-    <div class="top-bar__serch">
-      <a href="#" class="icon icon--loop top-bar__loop"></a>
-      <div class="top-bar__fild">
-        <input type="text" class="top-bar__input">
-        <a href="#" class="top-bar__btn-serch">Шукати</a>
-      </div>
+      <div class="top-bar__lable"><a style="text-decoration: none; color: #fff; font-weight: 600;" href="/home" >КАБІНЕТ</a></div>
     </div>
 
     <a href="/sign-up" class="icon icon--log-in"></a>

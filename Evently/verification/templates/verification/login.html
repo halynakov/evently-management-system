@@ -1,12 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизація</title>
+</head>
+<body>
+    <h2>Вхід</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.email  }}
+        {{ form.password }}
+        <button type="submit">Увійти</button>
+    </form>
+</body>
+</html> -->
+<!-- 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация</title>
+    <title>Авторизація</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for the form */
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Heading */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Form fields */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Button */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* CSRF token handling style */
+        .csrf-token {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h2>Вход</h2>
+    <h2>Вхід</h2>
     <form method="post">
+        <div class="csrf-token">
+            {% csrf_token %}
+        </div>
+        <div class="form-field">
+            {{ form.email }}
+        </div>
+        <div class="form-field">
+            {{ form.password }}
+        </div>
+        <button type="submit">Увійти</button>
+    </form>
+</body>
+</html> -->
+
+
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизація</title>
+    <link href="./../../../static/frontend/styles/forms/sign-up.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <form method="post">
+      <h2>Вход</h2>
         {% csrf_token %}
         {{ form.email  }}
         {{ form.password }}

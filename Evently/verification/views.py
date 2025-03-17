@@ -62,7 +62,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 print("Авторизация успешна!")  
-                return redirect('home')
+                return redirect('/', {"user_id": user.id})
   
             else:
                 print("Ошибка: неверный email или пароль.")  

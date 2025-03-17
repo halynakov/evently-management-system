@@ -3,64 +3,139 @@
 {% load static %}
 
 {% block styles %}
-  <link rel="stylesheet" href=" {% static 'frontend/styles/partials/home.css' %} ">
+  <link rel="stylesheet" href="{% static 'frontend/styles/partials/home.css' %}">
 {% endblock %}
 
 {% block title %} Home {% endblock %}
 
 {% block content %}
   {% include "./partials/top-bar.html" %}
-
   {% include "./partials/menu.html" %}
 
-  <div class="conteiner">
+  <div class="container">
     <div class="main_content">
-
       <div class="home">
         <div class="home__title">
           <img class="home__img" src="../../static/frontend/assets/icons/home-user-2x.png" alt="home-user-2x">
-          <p>Персональні данні</p>
-        </div>
-        <div class="home__user-datas">
-          <div class="home__user-data">
-            <p class="home__name-fild">Ім'я:</p>
-            <p class="home__content-fild">first_name</p>
-          </div>
-          <div class="home__user-data">
-            <p class="home__name-fild">Email:</p>
-            <p class="home__content-fild">exemple@exemple.exemple</p>
-          </div>
-          <div class="home__user-data">
-            <p class="home__name-fild">Призвище:</p>
-            <p class="home__content-fild">last_name</p>
-          </div>
+          <p>Мій кабінет</p>
+            
+          <button id="logout-btn" class="logout-btn" style="width: 72px;padding: 8px 10px;">
+            Вийти
+          </button>
         </div>
       </div>
 
-      <section class="catalogs" id="top-events">
+      <section class="catalogs" id="top-events" style="margin-left:60px">
         <h2 class="catalogs__title">Мої події:</h2>
 
         <div class="events">
-
-          {% for eventUser in eventsUser %}
+          <!-- {% for event in eventsData %}
             <article class="events__event">
               <div class="card">
                 <a href="#" class="card__img"></a>
-
                 <div class="card__all-text">
-                  <p class="card__date">{{ eventUser.date }}</p>
+                  <p class="card__date">{{ event.date }}</p>
                   <div class="car__space">
-                    <h3 class="card__title"><a class="card__link" href="event-{{ forloop.counter }}">{{ eventUser.description }}</a></h3>
-                    
-                    <p class="card__adress">{{ eventUser.location }}</p>
+                    <h3 class="card__title">
+                      <a class="card__link" href="event-{{ forloop.counter }}">{{ event.description }}</a>
+                    </h3>
+                    <p class="card__address">{{ event.location }}</p>
+<!-- 
+                    {% if not event.is_approved %}
+                      <button class="card__take-btn" onclick="approveEvent('{{ event.id }}')">Підтвердити</button>
+                    {% else %}
+                      <button class="card__take-btn" disabled>Підтверджено</button>
+                    {% endif %}
                   </div>
                 </div>
               </div>
             </article>
-          {% endfor %}
+          {% endfor %} -->
         </div>
       </section>
-
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const userId = localStorage.getItem("user_id"); 
+      if (!userId) {
+        console.error("User ID not found in localStorage");
+        return;
+      }
+
+      fetch(`/api/events/user/?user_id=${userId}`)
+        .then(response => response.json())
+        .then(events => {
+          const eventsContainer = document.querySelector(".events");
+          eventsContainer.innerHTML = ""; 
+
+          if (events.length === 0) {
+            eventsContainer.innerHTML = "<p>Немає подій</p>";
+            return;
+          }
+
+          events.forEach((event) => {
+            const eventHTML = `
+              <article class="events__event">
+                <div class="card">
+                  <a href="#" class="card__img"></a>
+                  <div class="card__all-text">
+                    <p class="card__date">${event.date}</p>
+                    <div class="car__space">
+                      <h3 class="card__title">
+                        <a class="card__link" href="event-${event.id}">${event.name}</a>
+                      </h3>
+                      <p class="card__address">${event.location}</p>
+                      ${event.is_approved ? 
+                        `<button class="card__take-btn" disabled>Підтверджено</button>` : 
+                        `<button class="card__take-btn" onclick="approveEvent('${event.id}')">Підтвердити</button>`
+                      }
+                    </div>
+                  </div>
+                </div>
+              </article>
+            `;
+            eventsContainer.innerHTML += eventHTML;
+          });
+        })
+        .catch(error => console.error("Error fetching events:", error));
+    });
+
+    function approveEvent(eventId) {
+      const userId = localStorage.getItem("user_id");
+      if (!userId) {
+        console.error("User ID not found in localStorage");
+        return;
+      }
+
+      fetch(`/api/events/approve/?user_id=${userId}&event_id=${eventId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': '{{ csrf_token }}',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          alert(data.message);
+          location.reload();
+        } else if (data.error) {
+          alert(data.error);
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while confirming the event.");
+      });
+    }
+
+    const logoutBtn = document.getElementById("logout-btn");
+    logoutBtn.addEventListener("click", function() {
+      localStorage.setItem("user_id", ''); 
+      window.location.href = "/";
+    });
+  </script>
+
 {% endblock %}

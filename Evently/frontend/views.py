@@ -3,6 +3,7 @@ from events.models import Event, EventCategory, EventUser
 
 # Create your views here.
 def index(request):
+  user_id = request.user.id
   events = Event.objects.all()
   eventCategoris = EventCategory.objects.all()
 
@@ -14,7 +15,8 @@ def index(request):
   return render(request, "frontend/index.html", {
     'events': events,
     'eventCategoris': eventCategoris,
-    'uniqueLocations': uniqueLocations
+    'uniqueLocations': uniqueLocations,
+    "user_id": user_id
     })
 
 def events(request):

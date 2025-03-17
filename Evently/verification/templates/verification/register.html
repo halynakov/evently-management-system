@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Регистрация</title>
+    <title>Реєстрація</title>
   </head>
   <body>
-    <h2>Регистрация</h2>
+    <h2>Реєстрація</h2>
     <form id="registerForm">
-      <label for="first_name">Имя:</label>
+      <label for="first_name">Ім'я:</label>
       <input type="text" id="first_name" name="first_name" required />
       <br />
 
-      <label for="last_name">Фамилия:</label>
+      <label for="last_name">Прізвище:</label>
       <input type="text" id="last_name" name="last_name" required />
       <br />
 
@@ -24,10 +24,74 @@
       <input type="password" id="password" name="password" required />
       <br />
 
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit">Зарєструватися</button>
     </form>
+    <p>
+      В мене вже є акаунт: <a href="/log-in">Увійти</a>
+    </p>
+    <p id="responseMessage"></p>
+
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          let first_name = document.getElementById("first_name").value;
+          let last_name = document.getElementById("last_name").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
+
+          let response = await fetch("/api/register/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ first_name, last_name, email, password }),
+          });
+
+          let result = await response.json();
+          document.getElementById("responseMessage").textContent =
+            result.message || JSON.stringify(result);
+        });
+    </script>
+  </body>
+</html> -->
+
+
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Реєстрація</title>
+    <link href="./../../../static/frontend/styles/forms/sign-up.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <form id="registerForm">
+      <h2>Реєстрація</h2>
+      <label for="first_name">Ім'я:</label>
+      <input type="text" id="first_name" name="first_name" placeholder="Максим" required />
+      <br/>
+
+      <label for="last_name">Прізвище:</label>
+      <input type="text" id="last_name" name="last_name" placeholder="Марцинкевич" required />
+      <br/>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="example@some.com" required />
+      <br/>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="1488/1337WLM" required />
+      <br/>
+
+      <button type="submit">Зарєструватися</button>
+      
+      <p>В мене вже є акаунт: <a href="/log-in">Увійти</a></p>
 
     <p id="responseMessage"></p>
+    </form>
 
     <script>
       document
