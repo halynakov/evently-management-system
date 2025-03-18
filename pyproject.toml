@@ -3,8 +3,9 @@ name = "evntly"
 version = "0.1.0"
 description = ""
 authors = ["Daria"]
-license = "MVT"
+license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "3.12.5"
@@ -16,4 +17,3 @@ djangorestframework = "^3.15.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-package-mode = false
